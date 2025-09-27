@@ -1,0 +1,52 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.*
+
+# IDE and editor folders
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Build output
+dist/
+build/
+coverage/
+
+# Misc
+*.tgz
+*.swp
+*.swo
+
+# Test output
+coverage/
+
+# Optional npm cache directory
+.npm
+
+# Mac system files
+.DS_Store
+
+# Others
+*.local
+*.pid
+*.seed
+*.pid.lock
+
+# MongoDB
+*.mongodb
+*.db
