@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>URL Shortener</title>
+	<style>
+		body { font-family: Arial, sans-serif; background: #f7f7f7; margin: 0; padding: 0; }
+		.container { max-width: 500px; margin: 60px auto; background: #fff; padding: 32px 24px 24px 24px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+		h1 { text-align: center; color: #333; }
+		form { display: flex; flex-direction: column; gap: 16px; }
+		input[type="text"] { padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 1rem; }
+		button { padding: 10px; background: #007bff; color: #fff; border: none; border-radius: 5px; font-size: 1rem; cursor: pointer; }
+		button:hover { background: #0056b3; }
+		.result, .error { margin-top: 20px; text-align: center; }
+		.result { color: #28a745; }
+		.error { color: #dc3545; }
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>URL Shortener</h1>
+		<form action="/shorten" method="POST">
+			<input type="text" name="redirectUrl" placeholder="Enter your long URL here" required>
+			<button type="submit">Shorten URL</button>
+		</form>
+		<% if (shortUrl) { %>
+			<div class="result">
+				Shortened URL: <a href="<%= shortUrl %>" target="_blank"><%= shortUrl %></a>
+			</div>
+		<% } %>
+		<% if (error) { %>
+			<div class="error"><%= error %></div>
+		<% } %>
+	</div>
+</body>
+</html>
